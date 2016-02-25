@@ -116,6 +116,10 @@ class Encoder:
                         seqhuff += hfcd[1]          
                 #Salvar os codigos em arquivo
                 fo.write(seqhuff + '\n')
+<<<<<<< HEAD
+=======
+                print 'ch, Size seqhuff: ', chnl, seqhuff.__sizeof__()
+>>>>>>> man-at-work
                 seqhuff = ''
         
         fo.close()
