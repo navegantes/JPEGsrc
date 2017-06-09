@@ -70,11 +70,7 @@ class HuffCoDec:
             DCcode = self.DCChromTB[cat]
 
         DChfcode = DCcode[cdwrd] + bitstr     #Código Huffman para o coef DC - huffcode + repr binária
-<<<<<<< HEAD
-        nbits += DCcode[sz]
-=======
         nbits = DCcode[sz]
->>>>>>> man-at-work
         huffcode = DChfcode
         
         if len(coefseq)>1:                    #Gera codigo huffman dos coeficientes AC
