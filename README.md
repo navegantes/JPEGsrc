@@ -1,10 +1,30 @@
-## Welcome to GitHub Pages
+# JPEGsrc
+----------
 
-You can use the [editor on GitHub](https://github.com/navegantes/JPEGsrc/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+A simple implementation of the algorithm JPEG encoder/decoder.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Dependencies
+----------
 
-### Markdown
+- [Opencv](https://opencv.org/) Opencv package utilized in reading/show of images and conversion of colors spaces ***RGB*** to ***YCbCr***.
+- [bitstring](https://pypi.python.org/pypi/bitstring/3.1.3) package used to convert the coefficients of the DCT transform. 
+
+## Usage
+----------
+
+Just run the main file.
+
+    python main.py
+ 
+## Outputs
+----------
+
+Generates a generic (and large) file .huff with the binary stream.
+
+## Exemples
+----------
+
+![ImRec](imtest/imtest.png)
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
