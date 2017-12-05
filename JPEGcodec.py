@@ -143,10 +143,10 @@ class Encoder:
         '''
         '''
         
-        print '    :: Taxa de Compressao: %2.3f'%(self.CRate)
-        print '    :: Redundancia de Dados: %2.3f' %(self.Redunc)
-        print '    :: Numero total de bits: ', self.NumBits
-        print '    :: Media de bits/Pixel: %2.3f' %(self.avgBits)
+        print '    :: Compression Rate: %2.3f'%(self.CRate)
+        print '    :: Data Redundancy: %2.3f' %(self.Redunc)
+        print '    :: Total Number of Bits: ', self.NumBits
+        print '    :: Avarage bits/Pixel: %2.3f' %(self.avgBits)
         
         
 #End class Encoder

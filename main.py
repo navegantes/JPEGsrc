@@ -21,7 +21,7 @@ root.withdraw()
 
 if __name__ == '__main__':
     
-    filepath = askopenfilename(parent=root, title="Choose your destiny!").__str__()
+    filepath = askopenfilename(parent=root, title="Choose a Image File!").__str__()
 #    filepath = 'flyingfish.jpg'
     img = cv2.imread(filepath,1)
     qually = 75
@@ -47,13 +47,13 @@ if __name__ == '__main__':
     luma2 = cv2.cvtColor(imrec, cv2.COLOR_YCR_CB2BGR)
     imdif = (luma1[:,:,0]-luma2[:,:,0]) + 128
 
-    print '\n- Computing MSSIM...'
+    print '\n- Computing SSIM...'
     SSIMout = ssim.compute_ssim(luma1[:,:,0], luma2[:,:,0])
-    print 'SSIM = ', SSIMout[0]
+    print '    :: SSIM = ', SSIMout[0]
     
-    cv2.imshow('Imagem Original', img)
-    cv2.imshow('Imagem Recuperada', imrec)
-    cv2.imshow('Diferenca Luma', imdif)
+    cv2.imshow('Original Image', img)
+    cv2.imshow('Recued Image', imrec)
+    cv2.imshow('Luma Diference', imdif)
     cv2.imshow('SSIM_Map', SSIMout[1])
 
 #    cv2.imshow('Diferenca', img-imrec)
