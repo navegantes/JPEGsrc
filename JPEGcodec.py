@@ -2,12 +2,13 @@
 """
 Created on Thu Apr 02 19:28:28 2015
 
-@author: Navegantes
+@author: Raphael Navegantes
 """
 
 import huffcoder as h
 import numpy as np
 import cv2
+import os
 from scipy import linalg
 
 class Encoder:
@@ -17,6 +18,7 @@ class Encoder:
         '''
         imOrig = cv2.imread(filepath,1)
         self.filepath = filepath
+        self.dirOut = 'output/'
         self.mode = mode
         #Taxa de compressão e Redundancia
         self.CRate = 0; self.Redunc = 0
@@ -41,7 +43,7 @@ class Encoder:
         elif self.Do == 3:
             self.NCHNL = 3
             
-#        self.OUTCOMES = self._run_()
+#       Inicia encoder
         self._run_()
 
     def _run_(self):
@@ -50,8 +52,14 @@ class Encoder:
         
         print '- Running Encoder...'
         hf = h.HuffCoDec()
-        flnm = 'output/' + self.filepath.split('/')[-1:][0].split('.')[0] + '.huff'
+        
+        if not os.path.exists(self.dirOut):
+            os.makedirs(self.dirOut)
+            print "- Creating directory: ", self.dirOut
+        
+        flnm = self.dirOut + self.filepath.split('/')[-1:][0].split('.')[0] + '.huff'
         fo = open(flnm,'w')
+        
         fo.write(str(self.Mo) + ',' + str(self.No) + ',' + str(self.Do) + ',' + 
                  str(self.qually) + ',' + self.mode + '\n')
         
@@ -60,6 +68,10 @@ class Encoder:
         coefs = np.zeros((r, c, chnl))
         seqhuff = ''
         #nbits = self.NumBits
+        
+        print "    :: Modo: ", self.mode, "\n    :: Qualidade: ", self.qually, \
+              "\n    :: Arquivo: ", self.filepath.split('/')[-1:][0]
+              
         if self.mode == '444':
             for ch in range(chnl):
                 DCant = 0
@@ -116,7 +128,7 @@ class Encoder:
                         seqhuff += hfcd[1]          
                 #Salvar os codigos em arquivo
                 fo.write(seqhuff + '\n')
-                print 'ch, Size seqhuff: ', chnl, seqhuff.__sizeof__()
+#                print '    canal, Size seqhuff: ', ch, seqhuff.__sizeof__()
                 seqhuff = ''
         
         fo.close()
@@ -219,7 +231,7 @@ class Decoder:
         imrec[imrec>255]=255
         imrec[imrec<0]=0
         
-        print 'Decoder Complete...'
+        print '- Decoder Complete...'
         
         return np.uint8(imrec)
 
@@ -232,7 +244,7 @@ def downsample(mat, mode):
     #M, N = mat.shape
     #D = mat[0,0].shape[0]
     ndims = ( m.ceil(M/2), m.ceil(N/2) )
-    newmat = np.zeros((ndims[0], ndims[1]))
+    newmat = np.zeros((int(ndims[0]), int(ndims[1])), float)
     #aux = np.zeros((m.ceil(M/2), N, D))
     
     if mode == '420':

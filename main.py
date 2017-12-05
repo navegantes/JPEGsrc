@@ -27,21 +27,19 @@ if __name__ == '__main__':
     qually = 75
     mode = '420'
     
-    print '\n***********************'
-    print '* Encoder Initialized *'
-    print '***********************'
+    print '\n****************************'
+    print '* JPEG Encoder Initialized *'
+    print '****************************'
     
     enc = jpg.Encoder(filepath, qually, mode)
     print '- Outcomes'
     enc.Outcomes()
     
-    print '\n***********************'
-    print '* Decoder Initialized *'
-    print '***********************'
-
-#    huffile = 'output/flyingfish.huff'
+    print '\n****************************'
+    print '* JPEG Decoder Initialized *'
+    print '****************************'
     
-    huffile = 'output/' + enc.filepath.split('/')[-1:][0].split('.')[0] + '.huff'
+    huffile = enc.dirOut + enc.filepath.split('/')[-1:][0].split('.')[0] + '.huff'
     dec = jpg.Decoder(huffile)
     imrec = dec._run_()
     
@@ -49,7 +47,7 @@ if __name__ == '__main__':
     luma2 = cv2.cvtColor(imrec, cv2.COLOR_YCR_CB2BGR)
     imdif = (luma1[:,:,0]-luma2[:,:,0]) + 128
 
-    print '\nComputing MSSIM...'
+    print '\n- Computing MSSIM...'
     SSIMout = ssim.compute_ssim(luma1[:,:,0], luma2[:,:,0])
     print 'SSIM = ', SSIMout[0]
     
