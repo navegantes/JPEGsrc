@@ -1,11 +1,11 @@
-# JPEGsrc
+# JPEGsrc Codec
 
 A simple implementation of the algorithm JPEG encoder/decoder.
 
 ## Dependencies
 
 - [Opencv](https://opencv.org/) Opencv package utilized in reading/show of images and conversion of colors spaces ***RGB*** to ***YCbCr***.
-- [bitstring](https://pypi.python.org/pypi/bitstring/3.1.3) package used to convert the coefficients of the DCT transform. 
+- [Bitstring](https://pypi.python.org/pypi/bitstring/3.1.3) package used to convert the coefficients of the DCT transform. 
 
 ## Usage
 
@@ -15,7 +15,9 @@ Just run the main file.
  
 ## Outputs
 
-Generates a generic (and large) file .huff with the binary stream.
+Generates a generic text (and large) file '.huff' in 'output/' with the binary stream.
+Coputes some compression information like: compression rate, data redundancy, total number of bits.
+At the end the image quality is measured by performing the Structural Similarity Index are performed.
 
 ## Exemples
 
@@ -24,33 +26,3 @@ Generates a generic (and large) file .huff with the binary stream.
 | *Original image* | *Rescued image* |
 | ![ImDif](imtest/ImDif.png) | ![ImSSIMMap](imtest/ImSSIMMap.png) |
 | *Diference image (luma)* | *Similarity map* |
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/navegantes/JPEGsrc/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
