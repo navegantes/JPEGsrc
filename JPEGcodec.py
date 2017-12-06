@@ -69,8 +69,8 @@ class Encoder:
         seqhuff = ''
         #nbits = self.NumBits
         
-        print "    :: Modo: ", self.mode, "\n    :: Qualidade: ", self.qually, \
-              "\n    :: Arquivo: ", self.filepath.split('/')[-1:][0]
+        print "    :: Mode: ", self.mode, "\n    :: Qually: ", self.qually, \
+              "\n    :: File: ", self.filepath.split('/')[-1:][0]
               
         if self.mode == '444':
             for ch in range(chnl):
