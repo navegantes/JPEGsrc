@@ -19,7 +19,9 @@ Generates a generic (and large) file .huff with the binary stream.
 
 ## Exemples
 
-![ImRec](imtest/ImRec.png)
+![flyingfish](imtest/flyingfish.jpg) ![ImRec](imtest/ImRec.png)
+
+![ImDif](imtest/ImDif.png) ![ImSSIMMap](imtest/ImSSIMMap.png)
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
