@@ -2,6 +2,8 @@
 
 A simple implementation of the algorithm JPEG encoder/decoder.
 
+[![Build Status](https://travis-ci.org/navegantes/JPEGsrc.svg?branch=master)](https://travis-ci.org/navegantes/JPEGsrc)
+
 ## Dependencies
 
 - [Opencv](https://opencv.org/) Opencv package utilized in reading/show of images and conversion of colors spaces ***RGB*** to ***YCbCr***.
