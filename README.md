@@ -2,7 +2,7 @@
 
 A simple implementation of the algorithm JPEG encoder/decoder.
 
-[![Build Status](https://travis-ci.org/navegantes/JPEGsrc.svg?branch=master)](https://travis-ci.org/navegantes/JPEGsrc)
+[![Build Status](https://travis-ci.org/navegantes/JPEGsrc.svg?branch=master)](https://travis-ci.org/navegantes/JPEGsrc) ![python-2.7](https://img.shields.io/badge/python-2.7-blue.svg)
 
 ## Dependencies
 
